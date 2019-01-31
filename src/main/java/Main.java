@@ -1,5 +1,3 @@
-import ejercicio02.Exercici02;
-import exercici01.Exercici01;
 import exercici03.Exercici03;
 
 public class Main {

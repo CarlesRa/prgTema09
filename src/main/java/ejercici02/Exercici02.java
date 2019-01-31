@@ -1,4 +1,4 @@
-package ejercicio02;
+package ejercici02;
 import utils.Lib;
 
 import java.util.InputMismatchException;
