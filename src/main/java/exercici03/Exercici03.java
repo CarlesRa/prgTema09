@@ -14,8 +14,7 @@ public class Exercici03 {
     }
     public void demanarNumeros(){
         Scanner lec = new Scanner(System.in);
-        int count = 0;
-        String numStr = "";
+        String numStr;
         boolean sonLetras = false;
         do{
             do {
