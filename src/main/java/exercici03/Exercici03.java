@@ -21,10 +21,11 @@ public class Exercici03 {
             do {
                 System.out.print("Introduce numeros hasta que se introduzcan letras: ");
                 numStr = lec.nextLine();
-                if (numStr==null || numStr.equals("")){
+                if ( numStr.equals("")){
                     System.out.println("No ha introducido ningun número...");
+                    Lib.continuar();
                 }
-            }while (numStr ==null || numStr.equals(""));
+            }while (numStr.equals(""));
             try {
                 num = Float.parseFloat(numStr);
                 if (numMajor<num){
