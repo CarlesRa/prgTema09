@@ -21,7 +21,7 @@ public class Lib {
         public  static void mensajeError(){
 
             System.out.print(limpiarPantalla()+letraRoja()+
-                    "Dato erroneo, pulsa intro para continuar: "+ reiniciarColorLetra());
+            "Dato erroneo, pulsa intro para continuar: "+ reiniciarColorLetra());
             lec.nextLine();
         }
 
