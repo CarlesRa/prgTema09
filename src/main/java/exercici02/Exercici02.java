@@ -9,15 +9,15 @@ public class Exercici02 {
         boolean esCorrecto = true;
         float numMajor = 0;
         int count = 0;
-        float [] nums = new float[10];
+        float nums = 0;
         for (int i=0; i<10; i++){
             do {
                 System.out.print("Introduce el numero "+(i+1)+":");
                 try{
-                    nums[i] = Float.parseFloat(lec.nextLine());
+                    nums = Float.parseFloat(lec.nextLine());
                     esCorrecto = true;
-                    if (numMajor<nums[i]){
-                        numMajor = nums[i];
+                    if (numMajor<nums){
+                        numMajor = nums;
                     }
                 }
                 catch (InputMismatchException IMEe){
