@@ -7,9 +7,8 @@ public class Exercici03 {
     private float num;
     private float numMajor;
     public Exercici03(){
-
         demanarNumeros();
-            System.out.print("El numero mayor introducido es: " + numMajor);
+        System.out.print("El numero mayor introducido es: " + numMajor);
     }
     public void demanarNumeros(){
         Scanner lec = new Scanner(System.in);
