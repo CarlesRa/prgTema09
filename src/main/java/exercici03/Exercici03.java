@@ -4,7 +4,6 @@ import utils.Lib;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Exercici03 {
-    private boolean isIntroduced;
     private float num;
     private float numMajor;
     public Exercici03(){
