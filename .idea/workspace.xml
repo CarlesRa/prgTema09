@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fbda62da-3488-44be-b170-08a7113daef3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exercici03/Exercici03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exercici03/Exercici03.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Lib.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Lib.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -61,8 +59,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/exercici03/Exercici03.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+            <state relative-caret-position="45">
+              <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -157,7 +155,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549043177064" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549044532782" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -265,12 +263,25 @@
       <option name="project" value="LOCAL" />
       <updated>1549038599405</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Terminadooor mejor">
+      <created>1549043238638</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1549043238639</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Terminadooor mejor x2">
+      <created>1549043462779</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1549043462779</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="743" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15227273" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -286,7 +297,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.21901529" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.21901529" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32963374" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.32879046" />
@@ -322,7 +333,9 @@
     <MESSAGE value="bucle fins introduir lletres" />
     <MESSAGE value="Volvemos al estado original" />
     <MESSAGE value="Terminadooor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Terminadooor" />
+    <MESSAGE value="Terminadooor mejor" />
+    <MESSAGE value="Terminadooor mejor x2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Terminadooor mejor x2" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/utils.java">
@@ -380,8 +393,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exercici03/Exercici03.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+        <state relative-caret-position="45">
+          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
