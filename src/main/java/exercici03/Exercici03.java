@@ -1,23 +1,23 @@
 package exercici03;
+import utils.Lib;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Exercici03 {
-    private boolean hayNumeros;
-    private float num;
-    private float numMajor;
+    private boolean isIntroduced;
+    private int num;
+    private int numMajor;
     public Exercici03(){
 
-        hayNumeros = true;
+        isIntroduced = true;
         demanarNumeros();
-        if (hayNumeros) {
-            System.out.print("El numero mayor introducido es: " + numMajor);
+        if (!isIntroduced){
+            System.out.println("No ha introducido ningun número...");
+        }
+        else{
+            System.out.print("El numero mayor introducido es: " + num);
         }
     }
-
-    /**
-     * Demana nombres fins que sintrodueixen lletres
-     */
     public void demanarNumeros(){
         Scanner lec = new Scanner(System.in);
         int count = 0;
@@ -25,32 +25,23 @@ public class Exercici03 {
         do{
             System.out.print("Introduce numeros hasta que se introduzcan letras: ");
             try {
-                num = Float.parseFloat(lec.nextLine());
-                count = 0;
+                num = Integer.parseInt(lec.nextLine());
                 if (numMajor<num){
                     count++;
                     numMajor = num;
                 }
             }
-            catch (InputMismatchException IMEe){
-                if (count == 0){
-                    hayNumeros = false;
-                    System.out.println("No ha introducido ningun número...");
-                }
-                else {
-                    hayNumeros = true;
-                    sonLetras = true;
-                }
-            }
             catch (NumberFormatException NFEe){
                 if (count == 0){
-                    hayNumeros = false;
-                    System.out.println("No ha introducido ningun número...");
+                    isIntroduced = false;
                 }
-                else {
-                    hayNumeros = true;
-                    sonLetras = true;
+                sonLetras = true;
+            }
+            catch (InputMismatchException IMEe){
+                if (count == 0){
+                    this.isIntroduced = false;
                 }
+                sonLetras = true;
             }
         }while (!sonLetras);
     }
