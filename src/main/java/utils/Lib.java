@@ -32,7 +32,7 @@ public class Lib {
         }
 
         public static  void continuar(){
-            System.out.print("Pulsa intro para continuar: ");
+            System.out.print("Intro per continuar: ");
             lec.nextLine();
         }
 
