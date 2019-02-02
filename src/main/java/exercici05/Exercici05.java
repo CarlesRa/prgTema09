@@ -18,21 +18,28 @@ public class Exercici05 {
             System.out.println("\nEl mes major es: " + alumneMajor.toString());
         }
         else{
-            System.out.println("Els alumnes tenen la mateixa edat...");
+            System.out.println("\nEls alumnes tenen la mateixa edat...");
         }
     }
 
     private  void crearAlumne(){
         boolean condicio;
-        String nom;
+        String nom ="";
         int edat = 0;
         float altura = 0;
         System.out.print(Lib.limpiarPantalla());
         for (int i = 0; i<2; i++){
             System.out.print(Lib.limpiarPantalla());
             Alumne a = new Alumne();
-            System.out.print("Introduix el nom: ");
-            nom = lec.nextLine();
+            while (nom.equals("")) {
+                System.out.print("Introduix el nom: ");
+                nom = lec.nextLine();
+                if (nom.equals("")){
+                    System.out.println(Lib.letraRoja()+"No ha indicat cap nom..."
+                            +Lib.reiniciarColorLetra());
+                    Lib.continuar();
+                }
+            }
             condicio = false;
             while (!condicio){
                 System.out.print(Lib.limpiarPantalla());
@@ -49,7 +56,8 @@ public class Exercici05 {
                         Lib.continuar();
                     }
                 } catch (NumberFormatException NFEe2) {
-                    System.out.println(Lib.letraRoja()+"La edat tenen que ser numeros enters... "+Lib.reiniciarColorLetra());
+                    System.out.println(Lib.letraRoja()+"La edat tenen que ser numeros enters... "
+                    +Lib.reiniciarColorLetra());
                     condicio = false;
                     Lib.continuar();
                 }
@@ -86,6 +94,7 @@ public class Exercici05 {
             }
             registreAlumnes [i] = a;
             System.out.println("Alumne creat amb exit!!\n");
+            nom = "";
         }
 
     }
