@@ -13,11 +13,17 @@ public class Exercici05 {
         System.out.println("Els alumnes creats son:");
         System.out.println(registreAlumnes[0].toString());
         System.out.println(registreAlumnes[1].toString());
-        System.out.println("\nEl mes major es: "+ alumneMajor.toString());
+        if (registreAlumnes[0].getEdad()>registreAlumnes[1].getEdad()
+        || registreAlumnes[1].getEdad()>registreAlumnes[0].getEdad()) {
+            System.out.println("\nEl mes major es: " + alumneMajor.toString());
+        }
+        else{
+            System.out.println("Els alumnes tenen la mateixa edat...");
+        }
     }
 
-    public  void crearAlumne(){
-        boolean condicio = false;
+    private  void crearAlumne(){
+        boolean condicio;
         String nom;
         int edat = 0;
         float altura = 0;
