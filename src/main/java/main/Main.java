@@ -1,3 +1,5 @@
+package main;
+
 import exercici01.Exercici01;
 import exercici02.Exercici02;
 import exercici03.Exercici03;

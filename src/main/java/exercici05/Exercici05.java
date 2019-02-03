@@ -10,6 +10,7 @@ public class Exercici05 {
         registreAlumnes = new Alumne[2];
         alumneMajor = new Alumne();
         crearAlumne();
+        Lib.limpiarPantalla();
         System.out.println("Els alumnes creats son:");
         System.out.println(registreAlumnes[0].toString());
         System.out.println(registreAlumnes[1].toString());
@@ -29,7 +30,6 @@ public class Exercici05 {
         float altura = 0;
         System.out.print(Lib.limpiarPantalla());
         for (int i = 0; i<2; i++){
-            System.out.print(Lib.limpiarPantalla());
             Alumne a = new Alumne();
             while (nom.equals("")) {
                 System.out.print("Introduix el nom: ");
@@ -42,7 +42,6 @@ public class Exercici05 {
             }
             condicio = false;
             while (!condicio){
-                System.out.print(Lib.limpiarPantalla());
                 System.out.print("Introduix l'edat: ");
                 try {
                     edat = Integer.parseInt(lec.nextLine());
@@ -64,7 +63,6 @@ public class Exercici05 {
             }
             condicio = false;
             while (!condicio){
-                System.out.print(Lib.limpiarPantalla());
                 System.out.print("Introduix l'altura: ");
                 try {
                     altura = Float.parseFloat(lec.nextLine());
@@ -83,7 +81,6 @@ public class Exercici05 {
                     Lib.continuar();
                 }
             }
-            System.out.print(Lib.limpiarPantalla());
             a.setNom(nom);
             a.setEdad(edat);
             a.setAltura(altura);
@@ -93,7 +90,9 @@ public class Exercici05 {
                 alumneMajor.setAltura(a.getAltura());
             }
             registreAlumnes [i] = a;
-            System.out.println("Alumne creat amb exit!!\n");
+            System.out.println("Alumne creat amb exit!!");
+            System.out.println(a.toString());
+            Lib.continuar();
             nom = "";
         }
 
