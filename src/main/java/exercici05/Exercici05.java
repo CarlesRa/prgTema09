@@ -10,7 +10,7 @@ public class Exercici05 {
         registreAlumnes = new Alumne[2];
         alumneMajor = new Alumne();
         crearAlumne();
-        Lib.limpiarPantalla();
+        System.out.println(Lib.limpiarPantalla());
         System.out.println("Els alumnes creats son:");
         System.out.println(registreAlumnes[0].toString());
         System.out.println(registreAlumnes[1].toString());
