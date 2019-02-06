@@ -35,8 +35,6 @@ public class Exercici08 {
             System.out.println("He provocat un nullPointer");
         }
 
-        nullPointer();
-
     }
     public void nullPointer() throws NullPointerException {
         throw new NullPointerException();
