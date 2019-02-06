@@ -12,13 +12,9 @@ public class Exercici07 {
 
     public void mostrarCadenesArray(String[] vector){
         for (int i=0; i<vector.length; i++){
-            try {
+            if (vector[i] != null){
                 System.out.println(vector[i].charAt(0));
             }
-            catch (NullPointerException NPEe1){
-
-            }
-
         }
     }
 }
