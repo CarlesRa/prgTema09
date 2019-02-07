@@ -1,26 +1,25 @@
 package exercici10;
 import utils.Lib;
 
-import java.sql.SQLOutput;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Exercici10 {
     // Variable selección del menu.
-    int numA;
+
     // Variables para las operaciones.
-    float numB;
-    float numC;
-    float resultado;
+    private float numB;
+    private float numC;
+    private float resultado;
     // Variable para seguir o salir del bucle.
-    boolean condicion;
-    Scanner lector;
+    private boolean condicion;
+    private Scanner lector;
     public Exercici10(){
-        lector = new Scanner(System.in);
+        int numA;
         condicion = false;
+        lector = new Scanner(System.in);
         // Bucle para vovlver a ejecutar asta pulsar 0.
         do { // imprimimos el menu.
             do {
-                System.out.println("****CALCULADORA****");
+                System.out.println("\n  Elija una opción: ");
                 System.out.println("  1. Suma");
                 System.out.println("  2. Resta");
                 System.out.println("  3. Multiplicación");
@@ -28,15 +27,7 @@ public class Exercici10 {
                 System.out.println("  5. Resto división");
                 System.out.println("  ------------------");
                 System.out.println("  0. Salir");
-                System.out.println("********************");
-                System.out.print("Elije una opción: ");
-                try {
-                    numA = Integer.parseInt(lector.nextLine());
-                    condicion = true;
-                } catch (NumberFormatException nfe1) {
-                    System.out.println("opcio no valida");
-                    Lib.continuar();
-                }
+                numA = intNumberFormatE();
             }while (!condicion);
             // switch con los casos del menu.
             switch (numA) {
@@ -47,37 +38,11 @@ public class Exercici10 {
                     System.out.println("         SUMA");
                     do {
                         System.out.print("\n  Introduzca el primer número: ");
-                        try {
-                            numB = Float.parseFloat(lector.nextLine());
-                            condicion = true;
-                        }
-                        catch (NumberFormatException nfe2){
-                            System.out.println(nfe2.getMessage());
-                            condicion = false;
-                            Lib.continuar();
-                        }
-                        catch (InputMismatchException imme1){
-                            imme1.getMessage();
-                            condicion = false;
-                            Lib.continuar();
-                        }
+                        numB = floatNumberFormatE();
                     }while (!condicion);
                     do {
-                        System.out.print("\n  Introduzca el segundo número: ");
-                        try {
-                            numC = Float.parseFloat(lector.nextLine());
-                            condicion = true;
-                        }
-                        catch (NumberFormatException nfe2){
-                            System.out.println(nfe2.getMessage());
-                            condicion = false;
-                            Lib.continuar();
-                        }
-                        catch (InputMismatchException imme1){
-                            imme1.getMessage();
-                            condicion = false;
-                            Lib.continuar();
-                        }
+                        System.out.print("  Introduzca el segundo número: ");
+                        numC = floatNumberFormatE();
                     }while (!condicion);
                     resultado = numB + numC;
                     System.out.println("\n     " + numB + "+" + numC + "=" + resultado);
@@ -89,37 +54,11 @@ public class Exercici10 {
                     System.out.println("         RESTA");
                     do {
                         System.out.print("\n  Introduzca el primer número: ");
-                        try {
-                            numB = Float.parseFloat(lector.nextLine());
-                            condicion = true;
-                        }
-                        catch (NumberFormatException nfe2){
-                            System.out.println(nfe2.getMessage());
-                            condicion = false;
-                            Lib.continuar();
-                        }
-                        catch (InputMismatchException imme1){
-                            imme1.getMessage();
-                            condicion = false;
-                            Lib.continuar();
-                        }
+                        numB = floatNumberFormatE();
                     }while (!condicion);
                     do {
-                        System.out.print("\n  Introduzca el segundo número: ");
-                        try {
-                            numC = Float.parseFloat(lector.nextLine());
-                            condicion = true;
-                        }
-                        catch (NumberFormatException nfe2){
-                            System.out.println(nfe2.getMessage());
-                            condicion = false;
-                            Lib.continuar();
-                        }
-                        catch (InputMismatchException imme1){
-                            imme1.getMessage();
-                            condicion = false;
-                            Lib.continuar();
-                        }
+                        System.out.print("  Introduzca el segundo número: ");
+                        numC = floatNumberFormatE();
                     }while (!condicion);
                     resultado = numB - numC;
                     System.out.println("\n     " + numB + "-" + numC + "=" + resultado);
@@ -129,40 +68,13 @@ public class Exercici10 {
                     break;
                 case 3:// multiplicación
                     System.out.println("         MULTIPLICACIÓN");
-                    System.out.print("\n  Introduzca el primer número: ");
                     do {
                         System.out.print("\n  Introduzca el primer número: ");
-                        try {
-                            numB = Float.parseFloat(lector.nextLine());
-                            condicion = true;
-                        }
-                        catch (NumberFormatException nfe2){
-                            System.out.println(nfe2.getMessage());
-                            condicion = false;
-                            Lib.continuar();
-                        }
-                        catch (InputMismatchException imme1){
-                            imme1.getMessage();
-                            condicion = false;
-                            Lib.continuar();
-                        }
+                        numB = floatNumberFormatE();
                     }while (!condicion);
                     do {
-                        System.out.print("\n  Introduzca el segundo número: ");
-                        try {
-                            numC = Float.parseFloat(lector.nextLine());
-                            condicion = true;
-                        }
-                        catch (NumberFormatException nfe2){
-                            System.out.println(nfe2.getMessage());
-                            condicion = false;
-                            Lib.continuar();
-                        }
-                        catch (InputMismatchException imme1){
-                            imme1.getMessage();
-                            condicion = false;
-                            Lib.continuar();
-                        }
+                        System.out.print("  Introduzca el segundo número: ");
+                        numC = floatNumberFormatE();
                     }while (!condicion);
                     resultado = numB * numC;
                     System.out.println("\n     " + numB + "x" + numC + "=" + resultado);
@@ -175,40 +87,13 @@ public class Exercici10 {
                     do {
                         do {
                             System.out.print("\n  Introduzca el primer número: ");
-                            try {
-                                numB = Float.parseFloat(lector.nextLine());
-                                condicion = true;
-                            } catch (NumberFormatException nfe2) {
-                                System.out.println(nfe2.getMessage());
-                                condicion = false;
-                                Lib.continuar();
-                            } catch (InputMismatchException imme1) {
-                                System.out.println(imme1.getMessage());
-                                condicion = false;
-                                Lib.continuar();
-                            }
+                            numB = floatNumberFormatE();
                         } while (!condicion);
                         do {
-                            System.out.print("\n  Introduzca el segundo número: ");
-                            try {
-                                numC = Float.parseFloat(lector.nextLine());
-                                condicion = true;
-                            } catch (NumberFormatException nfe2) {
-                                System.out.println(nfe2.getMessage());
-                                condicion = false;
-                                Lib.continuar();
-                            } catch (InputMismatchException imme1) {
-                                imme1.getMessage();
-                                condicion = false;
-                                Lib.continuar();
-                            }
-                            try {
-                                resultado = numB / numC;
-                            } catch (ArithmeticException ae1) {
-                                System.out.println(ae1.getMessage());
-                                condicion = false;
-                            }
+                            System.out.print("  Introduzca el segundo número: ");
+                            numC = floatNumberFormatE();
                         } while (!condicion);
+                        resultado = division(numB, numC);
                     }while (!condicion);
                     System.out.println("\n     " + numB + "/" + numC + "=" + resultado);
                     System.out.print("\n  Pulse intro para continuar");
@@ -219,49 +104,13 @@ public class Exercici10 {
                     System.out.println("         MÓDULO");
                     do {
                         System.out.print("\n  Introduzca el primer número: ");
-                        try {
-                            numB = Float.parseFloat(lector.nextLine());
-                            condicion = true;
-                        }
-                        catch (NumberFormatException nfe2){
-                            System.out.println(nfe2.getMessage());
-                            condicion = false;
-                            Lib.continuar();
-                        }
-                        catch (InputMismatchException imme1){
-                            imme1.getMessage();
-                            condicion = false;
-                            Lib.continuar();
-                        }
-                        catch (ArithmeticException ae1){
-                            System.out.println(ae1.getMessage());
-                            condicion = false;
-                            Lib.continuar();
-                        }
-                    }while (!condicion);
+                        numB = floatNumberFormatE();
+                    } while (!condicion);
                     do {
-                        System.out.print("\n  Introduzca el segundo número: ");
-                        try {
-                            numC = Float.parseFloat(lector.nextLine());
-                            condicion = true;
-                        }
-                        catch (NumberFormatException nfe2){
-                            System.out.println(nfe2.getMessage());
-                            condicion = false;
-                            Lib.continuar();
-                        }
-                        catch (InputMismatchException imme1){
-                            imme1.getMessage();
-                            condicion = false;
-                            Lib.continuar();
-                        }
-                        catch (ArithmeticException ae1){
-                            System.out.println(ae1.getMessage());
-                            condicion = false;
-                            Lib.continuar();
-                        }
-                    }while (!condicion);
-                    resultado = numB % numC;
+                        System.out.print("  Introduzca el segundo número: ");
+                        numC = floatNumberFormatE();
+                    } while (!condicion);
+                    resultado = modulo(numB,numC);
                     System.out.println("\n     " + numB + "%" + numC + "=" + resultado);
                     System.out.print("\n  Pulse intro para continuar");
                     lector.nextLine();
@@ -276,4 +125,58 @@ public class Exercici10 {
             }
         } while (condicion == true);
     }
+
+    public int intNumberFormatE(){
+        int num = 0;
+        try{
+            num = Integer.parseInt(lector.nextLine());
+            condicion = true;
+        }
+        catch (NumberFormatException nfe){
+            System.out.println(nfe.getMessage());
+            condicion = false;
+        }
+        return num;
+    }
+
+    public float floatNumberFormatE(){
+        float num = 0;
+        try{
+            num = Float.parseFloat(lector.nextLine());
+            condicion = true;
+        }
+        catch (NumberFormatException nfe){
+            System.out.println(nfe.getMessage());
+            condicion = false;
+        }
+        return num;
+    }
+
+    public float division(float numerador, float denominador){
+        float resultado = 0;
+        try{
+            resultado = numerador/denominador;
+            condicion = true;
+        }
+        catch (ArithmeticException afe){
+            System.out.println(afe.getMessage());
+            condicion = false;
+            Lib.continuar();
+        }
+        return resultado;
+    }
+    public float modulo(float num1, float num2){
+        float resultado = 0;
+        try{
+            resultado = num1%num2;
+            condicion = true;
+        }
+        catch (ArithmeticException afe){
+            System.out.println(afe.getMessage());
+            condicion = false;
+            Lib.continuar();
+        }
+        return resultado;
+    }
+
 }
