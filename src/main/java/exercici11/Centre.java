@@ -223,6 +223,23 @@ public class Centre {
 
     }
 
+    public void consultarPerCognom(){
+        esCorrecte = false;
+        String cognom;
+        System.out.print("introduix el cognom: ");
+        cognom = lec.nextLine();
+        for (int i=0; i<puntero; i++){
+            if (cognom.equals(registreAlumne[i].getCognom().substring(0,cognom.length()))){
+                System.out.println(registreAlumne[i].toString());
+                esCorrecte = true;
+            }
+        }
+        if (!esCorrecte){
+            System.out.println("Ningun alumne amb eixe cognom...");
+        }
+        Lib.continuar();
+    }
+
     /*public void numberFormatE(int dada){
             try {
                 dada = Integer.parseInt(lec.nextLine());

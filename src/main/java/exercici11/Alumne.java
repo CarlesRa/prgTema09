@@ -34,6 +34,14 @@ public class Alumne {
         this.nom = nom;
     }
 
+    public String getCognom() {
+        return cognom;
+    }
+
+    public void setCognom(String cognom) {
+        this.cognom = cognom;
+    }
+
     public String getDataNaiximent() {
         return dataNaiximent;
     }

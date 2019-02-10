@@ -29,6 +29,10 @@ public class Exercici11 {
                             centre.consultarPerEdat();
                         case 3:
                             centre.consultarPerNia();
+                            break;
+                        case 4:
+                            centre.consultarPerCognom();
+                            break;
                     }
             }
         }while (eleccio!=0);

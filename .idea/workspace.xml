@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fbda62da-3488-44be-b170-08a7113daef3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exercici11/Alumne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exercici11/Alumne.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/exercici11/Centre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exercici11/Centre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exercici11/Exercici11.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exercici11/Exercici11.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -62,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/exercici11/Alumne.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+            <state relative-caret-position="201">
+              <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
               <folding>
                 <element signature="e#448#449#0" expanded="true" />
                 <element signature="e#474#475#0" expanded="true" />
@@ -73,6 +73,9 @@
                 <element signature="e#595#596#0" expanded="true" />
                 <element signature="e#633#634#0" expanded="true" />
                 <element signature="e#663#664#0" expanded="true" />
+                <element signature="e#793#794#0" expanded="true" />
+                <element signature="e#837#838#0" expanded="true" />
+                <element signature="e#873#874#0" expanded="true" />
                 <element signature="e#703#704#0" expanded="true" />
                 <element signature="e#739#740#0" expanded="true" />
                 <element signature="e#797#798#0" expanded="true" />
@@ -93,8 +96,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/exercici11/Centre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="219" column="34" selection-start-line="219" selection-start-column="34" selection-end-line="219" selection-end-column="34" />
+            <state relative-caret-position="218">
+              <caret line="231" column="87" selection-start-line="231" selection-start-column="87" selection-end-line="231" selection-end-column="87" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,7 +129,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/utils/Lib.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
+            <state relative-caret-position="548">
               <caret line="90" column="9" lean-forward="true" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -174,10 +177,10 @@
         <option value="$PROJECT_DIR$/src/main/java/exercici09/MiExcepcion.java" />
         <option value="$PROJECT_DIR$/src/main/java/exercici10/Exercici10.java" />
         <option value="$PROJECT_DIR$/src/main/java/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/exercici11/Alumne.java" />
         <option value="$PROJECT_DIR$/src/main/java/exercici11/Interface.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/Lib.java" />
         <option value="$PROJECT_DIR$/src/main/java/exercici11/Exercici11.java" />
+        <option value="$PROJECT_DIR$/src/main/java/exercici11/Alumne.java" />
         <option value="$PROJECT_DIR$/src/main/java/exercici11/Centre.java" />
       </list>
     </option>
@@ -235,7 +238,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549814125298" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549815518430" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -522,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549813131933</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Consultar per nia fet">
+      <created>1549814255730</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1549814255730</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -594,7 +604,8 @@
     <MESSAGE value="opció nou alumne feta." />
     <MESSAGE value="opció baixa alumne feta." />
     <MESSAGE value="Consultar per edat fet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Consultar per edat fet" />
+    <MESSAGE value="Consultar per nia fet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Consultar per nia fet" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/utils.java" />
@@ -738,10 +749,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exercici11/Interface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="59" column="41" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exercici11/Exercici11.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="47" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exercici11/Alumne.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+        <state relative-caret-position="201">
+          <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
           <folding>
             <element signature="e#448#449#0" expanded="true" />
             <element signature="e#474#475#0" expanded="true" />
@@ -751,6 +779,9 @@
             <element signature="e#595#596#0" expanded="true" />
             <element signature="e#633#634#0" expanded="true" />
             <element signature="e#663#664#0" expanded="true" />
+            <element signature="e#793#794#0" expanded="true" />
+            <element signature="e#837#838#0" expanded="true" />
+            <element signature="e#873#874#0" expanded="true" />
             <element signature="e#703#704#0" expanded="true" />
             <element signature="e#739#740#0" expanded="true" />
             <element signature="e#797#798#0" expanded="true" />
@@ -769,7 +800,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/Lib.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
+        <state relative-caret-position="548">
           <caret line="90" column="9" lean-forward="true" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -777,27 +808,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exercici11/Interface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="59" column="41" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exercici11/Exercici11.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="47" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exercici11/Centre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="219" column="34" selection-start-line="219" selection-start-column="34" selection-end-line="219" selection-end-column="34" />
+        <state relative-caret-position="218">
+          <caret line="231" column="87" selection-start-line="231" selection-start-column="87" selection-end-line="231" selection-end-column="87" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
