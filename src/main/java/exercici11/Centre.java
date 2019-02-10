@@ -3,6 +3,7 @@ package exercici11;
 import utils.Lib;
 
 import java.util.Arrays;
+import java.util.GregorianCalendar;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -156,8 +157,44 @@ public class Centre {
     }
 
     public void consultarPerEdat(){
-        int edat;
-
+        esCorrecte = false;
+        int edat=0;
+        int calcularEdad=0;
+        int dia;
+        int mes;
+        int año;
+        GregorianCalendar fechaCompleta;
+        esCorrecte = false;
+        do {
+            System.out.print("Introduix la edat: ");
+            esCorrecte = true;
+            try {
+                edat = Integer.parseInt(lec.nextLine());
+                if(edat<3 || edat>90){
+                    System.out.println("no poden haver alumnes amb eixa edat...");
+                    esCorrecte = false;
+                }
+            }
+            catch (NumberFormatException nfe) {
+                Lib.mensajeError();
+            }
+        }while (!esCorrecte);
+        esCorrecte = false;
+        for(int i = 0; i<puntero; i++){
+            dia=Integer.parseInt(registreAlumne[i].getDataNaiximent().substring(0,2));
+            mes=Integer.parseInt(registreAlumne[i].getDataNaiximent().substring(3,5));
+            año=Integer.parseInt(registreAlumne[i].getDataNaiximent().substring(6,10));
+            fechaCompleta=new GregorianCalendar(año,mes,dia);
+            calcularEdad=Lib.calcularEdad(fechaCompleta);
+            if(calcularEdad==edat){
+                System.out.println(registreAlumne[i].toString());
+                esCorrecte = true;
+            }
+        }
+        if(!esCorrecte){
+            System.out.println("\u001B[31mNingun alumne te eixa edat...\u001B[0m");
+        }
+        Lib.continuar();
     }
 
     /*public void numberFormatE(int dada){

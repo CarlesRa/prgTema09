@@ -24,6 +24,9 @@ public class Exercici11 {
                     switch (eleccio2){
                         case 1:
                             centre.consultarPerGrup();
+                            break;
+                        case 2:
+                            centre.consultarPerEdat();
                     }
             }
         }while (eleccio!=0);
