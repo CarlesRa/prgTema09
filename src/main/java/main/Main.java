@@ -10,6 +10,7 @@ import exercici07.Exercici07;
 import exercici08.Exercici08;
 import exercici09.Exercici09;
 import exercici10.Exercici10;
+import exercici11.Exercici11;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,6 +23,7 @@ public class Main {
         //Exercici07 exe07 = new Exercici07();
         //Exercici08 exe08 = new Exercici08();
         //Exercici09 exe09 = new Exercici09();
-        Exercici10 exe10 = new Exercici10();
+        //Exercici10 exe10 = new Exercici10();
+        Exercici11 exe11 = new Exercici11();
     }
 }
