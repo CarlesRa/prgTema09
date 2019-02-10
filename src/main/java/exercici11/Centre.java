@@ -80,7 +80,7 @@ public class Centre {
             else{
                 any = dataNaixient.substring(6,10);
                 anyInt = Integer.parseInt(any);
-                if (anyInt>fechaActual.get(Calendar.YEAR)-4
+                if (anyInt>fechaActual.get(Calendar.YEAR)-2
                         || anyInt<fechaActual.get(Calendar.YEAR)-91){
                     System.out.println("No poden existir alumnes amb eixa edat...");
                     esCorrecte = false;

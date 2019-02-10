@@ -15,7 +15,7 @@ public class Interface {
 
     public int mostrarMenu(){
         do {
-            System.out.println("**GESTIÓ ALUMNES**");
+            System.out.println(Lib.limpiarPantalla()+"**GESTIÓ ALUMNES**");
             System.out.println("******************");
             System.out.println("1. Nou alumne...");
             System.out.println("2. Baixa alumne...");
@@ -39,7 +39,7 @@ public class Interface {
 
     public int mostrarSubMenu(){
         do {
-            System.out.println("*****************");
+            System.out.println(Lib.limpiarPantalla()+"*****************");
             System.out.println("**  CONSULTES  **");
             System.out.println("*****************");
             System.out.println("1. Per grup...");
