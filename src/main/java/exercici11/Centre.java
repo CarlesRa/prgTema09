@@ -2,10 +2,7 @@ package exercici11;
 
 import utils.Lib;
 
-import java.util.Arrays;
-import java.util.GregorianCalendar;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.*;
 
 public class Centre {
     private Alumne [] registreAlumne;
@@ -14,6 +11,7 @@ public class Centre {
     private boolean esCorrecte;
     private Interface menu;
     private String grup;
+    private GregorianCalendar fechaActual;
     public Centre(){
         registreAlumne = new Alumne[50];
         puntero = 0;
@@ -21,14 +19,17 @@ public class Centre {
         esCorrecte = false;
         grup = "";
         menu = new Interface();
+        fechaActual = (GregorianCalendar) Calendar.getInstance();
     }
 
     public void registrarAlumne(){
         int nia = 0;
+        String any = "";
         String nom = "";
         String congnom = "";
         String dataNaixient = "";
         int telefon = 0;
+        int anyInt;
         do {
             esCorrecte = true;
             System.out.print("Introduix el nia: ");
@@ -44,6 +45,7 @@ public class Centre {
             }
             catch (NumberFormatException nfe){
                 Lib.mensajeError();
+                esCorrecte = false;
             }
         }while (!esCorrecte);
         do {
@@ -75,8 +77,17 @@ public class Centre {
                 System.out.println("Recorda introduir la data en format DD-MM-AAAA");
                 Lib.continuar();
             }
+            else{
+                any = dataNaixient.substring(6,10);
+                anyInt = Integer.parseInt(any);
+                if (anyInt>fechaActual.get(Calendar.YEAR)-4
+                        || anyInt<fechaActual.get(Calendar.YEAR)-91){
+                    System.out.println("No poden existir alumnes amb eixa edat...");
+                    esCorrecte = false;
+                }
+            }
         }while (!esCorrecte);
-        grup = menu.menuGrup();
+        grup = menuGrup();
         do {
             esCorrecte = true;
             System.out.print("Introduixca el telefon: ");
@@ -138,7 +149,7 @@ public class Centre {
     public void consultarPerGrup(){
         esCorrecte = false;
         String grup;
-        grup=menu.menuGrup();
+        grup=menuGrup();
         for (int i=0; i<puntero; i++){
             try {
                 if (registreAlumne[i].getGrup().equals(grup)) {
@@ -173,6 +184,7 @@ public class Centre {
                 if(edat<3 || edat>90){
                     System.out.println("no poden haver alumnes amb eixa edat...");
                     esCorrecte = false;
+                    Lib.continuar();
                 }
             }
             catch (NumberFormatException nfe) {
@@ -238,6 +250,45 @@ public class Centre {
             System.out.println("Ningun alumne amb eixe cognom...");
         }
         Lib.continuar();
+    }
+
+    public String menuGrup(){
+        String [] posiblesGrups = {"1ºDAM","2ºDAM","1ºSMX","2ºSMX"};
+        String grup = "";
+        int eleccioGrup = 0;
+        do {
+            System.out.println("**GRUP**");
+            System.out.println("1. 1ºDAM");
+            System.out.println("2. 2ºDAM");
+            System.out.println("3. 1ºSMX");
+            System.out.println("4. 2ºSMX");
+            System.out.println("********");
+            System.out.print("selecciona un grup: ");
+            try{
+                eleccioGrup = Integer.parseInt(lec.nextLine());
+                if (eleccioGrup<1 || eleccioGrup>4){
+                    Lib.mensajeError();
+                }
+            }
+            catch (NumberFormatException nfe){
+                Lib.mensajeError();
+            }
+            switch (eleccioGrup) {
+                case 1:
+                    grup = posiblesGrups[0];
+                    break;
+                case 2:
+                    grup = posiblesGrups[1];
+                    break;
+                case 3:
+                    grup = posiblesGrups[2];
+                    break;
+                case 4:
+                    grup = posiblesGrups[3];
+                    break;
+            }
+        }while (eleccioGrup<1 || eleccioGrup>4);
+        return grup;
     }
 
     /*public void numberFormatE(int dada){
