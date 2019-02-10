@@ -15,7 +15,9 @@ public class Exercici11 {
             switch (eleccio) {
                 case 1:
                     centre.registrarAlumne();
-
+                    break;
+                case 2:
+                    centre.baixaAlumne();
             }
         }while (eleccio!=0);
     }

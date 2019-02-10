@@ -1,8 +1,6 @@
 package exercici11;
 
 import utils.Lib;
-
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Interface {

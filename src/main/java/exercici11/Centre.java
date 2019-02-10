@@ -130,6 +130,41 @@ public class Centre {
         puntero++;
     }
 
+    public void baixaAlumne(){
+        esCorrecte = false;
+        int nia;
+        do {
+            System.out.print("Introduix el nia del alumne a remoure: ");
+            try {
+                nia = Integer.parseInt(lec.nextLine());
+                for (int i=0; i<puntero; i++){
+                    try {
+                        if (nia == registreAlumne[i].getNia()) {
+                            registreAlumne[i] = registreAlumne[puntero-1];
+                            esCorrecte = true;
+                            puntero--;
+                        }
+                    }
+                    catch (NullPointerException npe){
+
+                    }
+                }
+                if (esCorrecte){
+                    System.out.println("Alumne remogut amb exit...");
+                    Lib.continuar();
+                }
+                else{
+                    System.out.println("No hi ha cap alumne amb eixe nia...");
+                    Lib.continuar();
+                    esCorrecte = true;
+                }
+            }
+            catch (NumberFormatException nfe){
+                Lib.mensajeError();
+            }
+        } while (!esCorrecte);
+    }
+
     public void numberFormatE(int dada){
             try {
                 dada = Integer.parseInt(lec.nextLine());
