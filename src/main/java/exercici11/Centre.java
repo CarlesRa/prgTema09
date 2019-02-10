@@ -197,6 +197,32 @@ public class Centre {
         Lib.continuar();
     }
 
+    public void consultarPerNia(){
+        int nia;
+        do {
+            esCorrecte = false;
+            System.out.print("Introduix el nia: ");
+            try{
+                nia = Integer.parseInt(lec.nextLine());
+                for (int i=0; i<puntero; i++){
+                    if (registreAlumne[i].getNia() == nia){
+                        System.out.println(registreAlumne[i].toString());
+                        Lib.continuar();
+                        return;
+                    }
+                }
+                if(!esCorrecte){
+                    System.out.println("Ningun alumne amb eixe nia...");
+                    esCorrecte = true;
+                }
+            }
+            catch (NumberFormatException nfe){
+                Lib.mensajeError();
+            }
+        }while (!esCorrecte);
+
+    }
+
     /*public void numberFormatE(int dada){
             try {
                 dada = Integer.parseInt(lec.nextLine());

@@ -27,6 +27,8 @@ public class Exercici11 {
                             break;
                         case 2:
                             centre.consultarPerEdat();
+                        case 3:
+                            centre.consultarPerNia();
                     }
             }
         }while (eleccio!=0);
