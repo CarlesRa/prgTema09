@@ -1,6 +1,7 @@
 package utils;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import  java.util.Scanner;
 import java.util.Random;
 public class Lib {
@@ -68,5 +69,24 @@ public class Lib {
             Random rnd=new Random();
             aleatori=rnd.nextInt(max-min+1)+min;
             return aleatori;
+        }
+
+        public static int calcularEdad(Calendar fechaNac) {
+
+            Calendar fechaActual = Calendar.getInstance();
+            // Cálculo de las diferencias.
+            int years = fechaActual.get(Calendar.YEAR) - fechaNac.get(Calendar.YEAR);
+            int months = fechaActual.get(Calendar.MONTH) - fechaNac.get(Calendar.MONTH);
+            int days = fechaActual.get(Calendar.DAY_OF_MONTH) - fechaNac.get(Calendar.DAY_OF_MONTH);
+            /*comprovem si el mes del aniversari es posterior a la data
+            o si estem en el mes pero no ha arrivat el dia*/
+            if(months < 0 || months==0 && days < 0){
+                years--;
+            }
+            //en cas de que ja haja pasat la data
+            if(months<=0 && days>=0){
+                years++;
+            }
+            return years;
         }
     }

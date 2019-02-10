@@ -11,7 +11,7 @@ public class Centre {
     private int puntero;
     private Scanner lec;
     private boolean esCorrecte;
-    private int eleccioGrup;
+    private Interface menu;
     private String grup;
     public Centre(){
         registreAlumne = new Alumne[50];
@@ -19,6 +19,7 @@ public class Centre {
         lec = new Scanner(System.in);
         esCorrecte = false;
         grup = "";
+        menu = new Interface();
     }
 
     public void registrarAlumne(){
@@ -26,7 +27,6 @@ public class Centre {
         String nom = "";
         String congnom = "";
         String dataNaixient = "";
-        String [] posiblesGrups = {"1ºDAM","2ºDAM","1ºSMX","2ºSMX"};
         int telefon = 0;
         do {
             esCorrecte = true;
@@ -75,38 +75,7 @@ public class Centre {
                 Lib.continuar();
             }
         }while (!esCorrecte);
-        do {
-            System.out.println("**GRUP**");
-            System.out.println("1. 1ºDAM");
-            System.out.println("2. 2ºDAM");
-            System.out.println("3. 1ºSMX");
-            System.out.println("4. 2ºSMX");
-            System.out.println("********");
-            System.out.print("selecciona un grup: ");
-            try{
-                eleccioGrup = Integer.parseInt(lec.nextLine());
-                if (eleccioGrup<1 || eleccioGrup>4){
-                    Lib.mensajeError();
-                }
-            }
-            catch (NumberFormatException nfe){
-                Lib.mensajeError();
-            }
-            switch (eleccioGrup) {
-                case 1:
-                    grup = posiblesGrups[0];
-                    break;
-                case 2:
-                    grup = posiblesGrups[1];
-                    break;
-                case 3:
-                    grup = posiblesGrups[2];
-                    break;
-                case 4:
-                    grup = posiblesGrups[3];
-                    break;
-            }
-        }while (eleccioGrup<1 || eleccioGrup>4);
+        grup = menu.menuGrup();
         do {
             esCorrecte = true;
             System.out.print("Introduixca el telefon: ");
@@ -124,7 +93,7 @@ public class Centre {
         }while (!esCorrecte);
         Alumne aux = new Alumne(nia,nom,congnom,dataNaixient,grup,telefon);
         registreAlumne [puntero] = aux;
-        System.out.println("Alumne creat amb exit");
+        System.out.println("Alumne creat amb exit!!");
         System.out.println(aux.toString());
         Lib.continuar();
         puntero++;
@@ -165,7 +134,33 @@ public class Centre {
         } while (!esCorrecte);
     }
 
-    public void numberFormatE(int dada){
+    public void consultarPerGrup(){
+        esCorrecte = false;
+        String grup;
+        grup=menu.menuGrup();
+        for (int i=0; i<puntero; i++){
+            try {
+                if (registreAlumne[i].getGrup().equals(grup)) {
+                    System.out.println(registreAlumne[i].toString());
+                    esCorrecte = true;
+                }
+            }
+            catch (NullPointerException npe){
+
+            }
+        }
+        if (!esCorrecte){
+            System.out.println("Ningun alumne amb eixe grup...");
+        }
+        Lib.continuar();
+    }
+
+    public void consultarPerEdat(){
+        int edat;
+
+    }
+
+    /*public void numberFormatE(int dada){
             try {
                 dada = Integer.parseInt(lec.nextLine());
                 esCorrecte = true;
@@ -184,5 +179,5 @@ public class Centre {
             System.out.println("Dada incorrecta...");
             Lib.continuar();
         }
-    }
+    }*/
 }

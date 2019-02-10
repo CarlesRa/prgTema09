@@ -18,6 +18,13 @@ public class Exercici11 {
                     break;
                 case 2:
                     centre.baixaAlumne();
+                    break;
+                case 3:
+                    eleccio2 = menu.mostrarSubMenu();
+                    switch (eleccio2){
+                        case 1:
+                            centre.consultarPerGrup();
+                    }
             }
         }while (eleccio!=0);
     }
