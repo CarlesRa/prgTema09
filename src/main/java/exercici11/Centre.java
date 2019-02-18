@@ -290,25 +290,4 @@ public class Centre {
         }while (eleccioGrup<1 || eleccioGrup>4);
         return grup;
     }
-
-    /*public void numberFormatE(int dada){
-            try {
-                dada = Integer.parseInt(lec.nextLine());
-                esCorrecte = true;
-            } catch (NumberFormatException nfe) {
-                System.out.println("Dada incorrecta...");
-                Lib.continuar();
-            }
-    }
-
-    public void inputMismatchE(String dada){
-
-        try {
-            dada = lec.nextLine();
-            esCorrecte = true;
-        } catch (InputMismatchException ime) {
-            System.out.println("Dada incorrecta...");
-            Lib.continuar();
-        }
-    }*/
 }
