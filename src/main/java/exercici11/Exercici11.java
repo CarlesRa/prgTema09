@@ -27,6 +27,7 @@ public class Exercici11 {
                             break;
                         case 2:
                             centre.consultarPerEdat();
+                            break;
                         case 3:
                             centre.consultarPerNia();
                             break;
