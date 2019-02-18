@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Centre {
     private Alumne [] registreAlumne;
-    private int puntero;
+    public static int puntero;
     private Scanner lec;
     private boolean esCorrecte;
     private Interface menu;
@@ -108,7 +108,39 @@ public class Centre {
         System.out.println("Alumne creat amb exit!!");
         System.out.println(aux.toString());
         Lib.continuar();
+
         puntero++;
+    }
+
+    public void test() {
+        int n;
+        Scanner lec = new Scanner(System.in);
+        Alumne aux;
+        String nom;
+        String cognom;
+        String dataNaiximent;
+        String grup;
+        int telefon;
+        String[] noms = {"Pepe", "Juan", "Maria", "Paulina", "Colet", "Violet", "Pamela", "Carlos"};
+        String[] cognoms = {"Ramirez", "Rodenas", "Guarde", "Ramos", "Moll", "Pastor", "Rossel"};
+        String[] dates = {"15-08-1982", "12-04-2000", "25-06-2010", "12-02-2004"};
+        String[] grups = {"1ºDAM", "2ºDAM", "1ºSMX", "2ºSMX"};
+        System.out.print("Cuantos desea añadir?: ");
+        n = lec.nextInt();
+        lec.nextLine();
+        for (int i = 0; i < n; i++) {
+            nom = noms[Lib.random(0, noms.length - 1)];
+            cognom = cognoms[Lib.random(0, cognoms.length - 1)];
+            dataNaiximent = dates[Lib.random(0, dates.length - 1)];
+            grup = grups[Lib.random(0, grups.length - 1)];
+            telefon = Lib.random(600000000, 699999999);
+            aux = new Alumne(i, nom, cognom, dataNaiximent, grup, telefon);
+            registreAlumne[i]=aux;
+            puntero++;
+        }
+        Lib.barraCarrega(n);
+        System.out.print("Alumnos generados, pulse intro para continuar: ");
+        lec.nextLine();
     }
 
     public void baixaAlumne(){
@@ -150,6 +182,7 @@ public class Centre {
         esCorrecte = false;
         String grup;
         grup=menuGrup();
+        Interface.cabecera();
         for (int i=0; i<puntero; i++){
             try {
                 if (registreAlumne[i].getGrup().equals(grup)) {

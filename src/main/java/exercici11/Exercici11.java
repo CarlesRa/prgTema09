@@ -35,6 +35,10 @@ public class Exercici11 {
                             centre.consultarPerCognom();
                             break;
                     }
+                break;
+                case 4:
+                    centre.test();
+                    break;
             }
         }while (eleccio!=0);
     }

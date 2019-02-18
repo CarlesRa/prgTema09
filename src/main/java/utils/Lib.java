@@ -89,4 +89,22 @@ public class Lib {
             }
             return years;
         }
+
+    /**
+     * mostra una barra de carrega.
+     * @param num temps que tarda la barra en milisegons.
+     */
+    public static void barraCarrega(int num){
+
+        for (int i = 0; i <30; i++) {
+            try {
+                Thread.sleep(num);
+            } catch (InterruptedException e) {
+                // this part is executed when an exception (in this example
+                // InterruptedException) occurs
+            }
+            System.out.print("\u001B[44m ");
+        }
+        System.out.println("\u001B[0m");
+    }
     }

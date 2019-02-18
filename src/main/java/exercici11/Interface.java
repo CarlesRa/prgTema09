@@ -21,11 +21,13 @@ public class Interface {
             System.out.println("2. Baixa alumne...");
             System.out.println("3. Consultes...");
             System.out.println("******************");
+            System.out.println("4. Alumnes aleatoris.");
+
             System.out.println("0. Eixir");
             System.out.print("Tria una opció: ");
             try {
                 eleccio = Integer.parseInt(lec.nextLine());
-                if (eleccio<0 || eleccio>3){
+                if (eleccio<0 || eleccio>4){
                     Lib.mensajeError();
                 }
                 esCorrecte = true;
@@ -33,7 +35,7 @@ public class Interface {
             catch (NumberFormatException nfe){
                 Lib.mensajeError();
             }
-        }while(eleccio <0 || eleccio>3 || !esCorrecte);
+        }while(eleccio <0 || eleccio>4 || !esCorrecte);
         return eleccio;
     }
 
@@ -58,6 +60,9 @@ public class Interface {
             }
         }while(eleccio <0 || eleccio>4 || !esCorrecte);
         return eleccio;
+    }
+    public static void cabecera(){
+        System.out.println("\u001B[4mNIA     NOMBRE  APELLIDO F.NACIM.       GRUPO   TELEFONO\u001B[0m");
     }
 }
 

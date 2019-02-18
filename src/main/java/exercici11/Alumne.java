@@ -66,15 +66,19 @@ public class Alumne {
         this.telefon = telefon;
     }
 
+
+    //metodes
     @Override
-    public String toString() {
-        return "Alumne{" +
-                "nia=" + nia +
-                ", nom='" + nom + '\'' +
-                ", cognom='" + cognom + '\'' +
-                ", dataNaiximent='" + dataNaiximent + '\'' +
-                ", grup='" + grup + '\'' +
-                ", telefon=" + telefon +
-                '}';
+    public String toString(){
+        StringBuilder sB=new StringBuilder();
+        String s;
+        sB.append(getNia()).append("\t");
+        sB.append(getNom()).append("\t");
+        sB.append(getCognom()).append("\t");
+        sB.append(getDataNaiximent()).append("\t");
+        sB.append(getGrup()).append("\t");
+        sB.append(getTelefon()).append("\t");
+        s=sB.toString();
+        return s;
     }
 }
