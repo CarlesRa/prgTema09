@@ -7,8 +7,8 @@ import java.util.Random;
 public class Lib {
 
         static  Scanner lec = new Scanner (System.in);
-        public static  String limpiarPantalla(){
-            return "\u001B[H\u001B[2J";
+        public static  void limpiarPantalla(){
+            System.out.print("\u001B[H\u001B[2J");
         }
 
         public static String letraRoja(){
@@ -20,9 +20,8 @@ public class Lib {
         }
 
         public  static void mensajeError(){
-
-            System.out.print(limpiarPantalla()+letraRoja()+
-            "Dato erroneo, pulsa intro para continuar: "+ reiniciarColorLetra());
+            System.out.print(letraRoja()+
+            "Dada erronea, prega intro per continuar: "+ reiniciarColorLetra());
             lec.nextLine();
         }
 
@@ -80,11 +79,11 @@ public class Lib {
             int days = fechaActual.get(Calendar.DAY_OF_MONTH) - fechaNac.get(Calendar.DAY_OF_MONTH);
             /*comprovem si el mes del aniversari es posterior a la data
             o si estem en el mes pero no ha arrivat el dia*/
-            if(months < 0 || months==0 && days < 0){
+            if( days>0 && months<=0){
                 years--;
             }
             //en cas de que ja haja pasat la data
-            if(months<=0 && days>=0){
+            else if(months>=0 && days>0){
                 years++;
             }
             return years;

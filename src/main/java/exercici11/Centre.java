@@ -13,7 +13,7 @@ public class Centre {
     private String grup;
     private GregorianCalendar fechaActual;
     public Centre(){
-        registreAlumne = new Alumne[50];
+        registreAlumne = new Alumne[100];
         puntero = 0;
         lec = new Scanner(System.in);
         esCorrecte = false;
@@ -22,6 +22,9 @@ public class Centre {
         fechaActual = (GregorianCalendar) Calendar.getInstance();
     }
 
+    /**
+     * Registra alumnes controlant l'entrada de dades.
+     */
     public void registrarAlumne(){
         int nia = 0;
         String any = "";
@@ -36,7 +39,7 @@ public class Centre {
             try{
                 nia = Integer.parseInt(lec.nextLine());
                 for (int i=0; i<puntero; i++){
-                    if (registreAlumne[i].getNia() == nia){
+                    if (registreAlumne[i].getNia() == nia) {
                         System.out.println("El nia no es pot repetir...");
                         Lib.continuar();
                         esCorrecte = false;
@@ -104,15 +107,26 @@ public class Centre {
             }
         }while (!esCorrecte);
         Alumne aux = new Alumne(nia,nom,congnom,dataNaixient,grup,telefon);
-        registreAlumne [puntero] = aux;
+        try {
+            registreAlumne[puntero] = aux;
+        }
+        catch (ArrayIndexOutOfBoundsException aiobe){
+            System.out.println("No caben mas alumnos en la base de datos, consulte con su técnico.");
+            return;
+        }
         System.out.println("Alumne creat amb exit!!");
+        Interface.cabecera();
         System.out.println(aux.toString());
         Lib.continuar();
 
         puntero++;
     }
 
+    /**
+     * Genera alumnes aleatoris, podent indicar el nombre a crear.
+     */
     public void test() {
+        esCorrecte = false;
         int n;
         Scanner lec = new Scanner(System.in);
         Alumne aux;
@@ -125,17 +139,32 @@ public class Centre {
         String[] cognoms = {"Ramirez", "Rodenas", "Guarde", "Ramos", "Moll", "Pastor", "Rossel"};
         String[] dates = {"15-08-1982", "12-04-2000", "25-06-2010", "12-02-2004"};
         String[] grups = {"1ºDAM", "2ºDAM", "1ºSMX", "2ºSMX"};
-        System.out.print("Cuantos desea añadir?: ");
-        n = lec.nextInt();
-        lec.nextLine();
+        do {
+            System.out.print("Molts alumnes desitja anyadir?: ");
+            try {
+                n = Integer.parseInt(lec.nextLine());
+                esCorrecte = true;
+            } catch (NumberFormatException nfe) {
+                Lib.mensajeError();
+                n=0;
+                esCorrecte = false;
+            }
+        }while (!esCorrecte);
         for (int i = 0; i < n; i++) {
             nom = noms[Lib.random(0, noms.length - 1)];
             cognom = cognoms[Lib.random(0, cognoms.length - 1)];
             dataNaiximent = dates[Lib.random(0, dates.length - 1)];
             grup = grups[Lib.random(0, grups.length - 1)];
             telefon = Lib.random(600000000, 699999999);
-            aux = new Alumne(i, nom, cognom, dataNaiximent, grup, telefon);
-            registreAlumne[i]=aux;
+            aux = new Alumne(puntero+1, nom, cognom, dataNaiximent, grup, telefon);
+            try {
+                registreAlumne[puntero] = aux;
+            }
+            catch (ArrayIndexOutOfBoundsException aiobe){
+                System.out.println("No caben mas alumnos en la base de datos, consulte con su técnico.");
+                Lib.continuar();
+                return;
+            }
             puntero++;
         }
         Lib.barraCarrega(n);
@@ -143,6 +172,9 @@ public class Centre {
         lec.nextLine();
     }
 
+    /**
+     * Lleva un alumne de la base de dades
+     */
     public void baixaAlumne(){
         esCorrecte = false;
         int nia;
@@ -178,6 +210,9 @@ public class Centre {
         } while (!esCorrecte);
     }
 
+    /**
+     * Realitza una consulta en la base de dades segons el grup.
+     */
     public void consultarPerGrup(){
         esCorrecte = false;
         String grup;
@@ -199,7 +234,9 @@ public class Centre {
         }
         Lib.continuar();
     }
-
+    /**
+     * Realitza una consulta en la base de dades segons la edat.
+     */
     public void consultarPerEdat(){
         esCorrecte = false;
         int edat=0;
@@ -225,6 +262,7 @@ public class Centre {
             }
         }while (!esCorrecte);
         esCorrecte = false;
+        Interface.cabecera();
         for(int i = 0; i<puntero; i++){
             dia=Integer.parseInt(registreAlumne[i].getDataNaiximent().substring(0,2));
             mes=Integer.parseInt(registreAlumne[i].getDataNaiximent().substring(3,5));
@@ -242,6 +280,9 @@ public class Centre {
         Lib.continuar();
     }
 
+    /**
+     * Realitza una consulta en la base de dades segons el nia.
+     */
     public void consultarPerNia(){
         int nia;
         do {
@@ -249,6 +290,7 @@ public class Centre {
             System.out.print("Introduix el nia: ");
             try{
                 nia = Integer.parseInt(lec.nextLine());
+                Interface.cabecera();
                 for (int i=0; i<puntero; i++){
                     if (registreAlumne[i].getNia() == nia){
                         System.out.println(registreAlumne[i].toString());
@@ -259,6 +301,7 @@ public class Centre {
                 if(!esCorrecte){
                     System.out.println("Ningun alumne amb eixe nia...");
                     esCorrecte = true;
+                    Lib.continuar();
                 }
             }
             catch (NumberFormatException nfe){
@@ -268,15 +311,24 @@ public class Centre {
 
     }
 
+    /**
+     * Realitza una consulta en la base de dades segons el cognom.
+     */
     public void consultarPerCognom(){
         esCorrecte = false;
         String cognom;
         System.out.print("introduix el cognom: ");
         cognom = lec.nextLine();
+        Interface.cabecera();
         for (int i=0; i<puntero; i++){
-            if (cognom.equals(registreAlumne[i].getCognom().substring(0,cognom.length()))){
-                System.out.println(registreAlumne[i].toString());
-                esCorrecte = true;
+            try {
+                if (cognom.equalsIgnoreCase(registreAlumne[i].getCognom().substring(0, cognom.length()))) {
+                    System.out.println(registreAlumne[i].toString());
+                    esCorrecte = true;
+                }
+            }
+            catch (StringIndexOutOfBoundsException sibe){
+
             }
         }
         if (!esCorrecte){
@@ -285,6 +337,10 @@ public class Centre {
         Lib.continuar();
     }
 
+    /**
+     * Mostra el menu dels grups disponibles en la base de dades.
+     * @return la elecció del menú
+     */
     public String menuGrup(){
         String [] posiblesGrups = {"1ºDAM","2ºDAM","1ºSMX","2ºSMX"};
         String grup = "";

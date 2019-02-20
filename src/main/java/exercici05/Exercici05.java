@@ -10,7 +10,7 @@ public class Exercici05 {
         registreAlumnes = new Alumne[2];
         alumneMajor = new Alumne();
         crearAlumne();
-        System.out.println(Lib.limpiarPantalla());
+        Lib.limpiarPantalla();
         System.out.println("Els alumnes creats son:");
         System.out.println(registreAlumnes[0].toString());
         System.out.println(registreAlumnes[1].toString());
@@ -28,7 +28,7 @@ public class Exercici05 {
         String nom ="";
         int edat = 0;
         float altura = 0;
-        System.out.print(Lib.limpiarPantalla());
+        Lib.limpiarPantalla();
         for (int i = 0; i<2; i++){
             Alumne a = new Alumne();
             while (nom.equals("")) {

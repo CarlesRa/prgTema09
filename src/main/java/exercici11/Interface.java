@@ -15,7 +15,8 @@ public class Interface {
 
     public int mostrarMenu(){
         do {
-            System.out.println(Lib.limpiarPantalla()+"**GESTIÓ ALUMNES**");
+            Lib.limpiarPantalla();
+            System.out.println("**GESTIÓ ALUMNES**");
             System.out.println("******************");
             System.out.println("1. Nou alumne...");
             System.out.println("2. Baixa alumne...");
@@ -34,14 +35,16 @@ public class Interface {
             }
             catch (NumberFormatException nfe){
                 Lib.mensajeError();
+                esCorrecte = false;
             }
-        }while(eleccio <0 || eleccio>4 || !esCorrecte);
+        }while(!esCorrecte);
         return eleccio;
     }
 
     public int mostrarSubMenu(){
         do {
-            System.out.println(Lib.limpiarPantalla()+"*****************");
+            Lib.limpiarPantalla();
+            System.out.println("*****************");
             System.out.println("**  CONSULTES  **");
             System.out.println("*****************");
             System.out.println("1. Per grup...");
@@ -62,7 +65,8 @@ public class Interface {
         return eleccio;
     }
     public static void cabecera(){
-        System.out.println("\u001B[4mNIA     NOMBRE  APELLIDO F.NACIM.       GRUPO   TELEFONO\u001B[0m");
+        Lib.limpiarPantalla();
+        System.out.println("\u001B[4mNIA      NOM    COGNOM   D.NAIXI.        GRUP     TELEFON\u001B[0m");
     }
 }
 
